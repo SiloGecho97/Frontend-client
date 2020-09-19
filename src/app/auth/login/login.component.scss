@@ -1,0 +1,71 @@
+@import '../../../../assets/scss/abstracts/variables';
+
+.login {
+    width: 20rem;
+    padding: 2rem 2rem;
+    background: $color-white;
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem .2rem rgba($color-black, .2);
+    position: relative;
+    overflow: hidden;
+
+    &__title {
+        font-size: 1.5rem;
+        text-align: center;
+        color: $color-primary;
+        margin-bottom: .5rem;
+    }
+
+    &__progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__field {
+        width: 100%;
+    }
+
+    &__btn {
+        width: 100%;
+        font-size: 1rem;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 2rem;
+        margin-top: 1rem;
+    }
+
+    .input-icon {
+        color: $color-primary;
+        margin-right: .8rem;
+    }
+
+    &__error {
+        // font-weight: 600;
+        margin-bottom: .5rem;
+        background-color: $color-red;
+        color: white;
+        padding: .2rem .5rem;
+        border-radius: 3px;
+        white-space: nowrap;
+    }
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: $color-tertiary;
+  }
+  
+  ::ng-deep .mat-progress-bar-buffer {
+    background: $color-white;
+  }
+  
+  ::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+  }

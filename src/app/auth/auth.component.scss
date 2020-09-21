@@ -9,8 +9,8 @@
 
     &__image {
         background-color: $color-primary;
-        // border-radius: 50%;
-        // padding:0.5rem;
+        border-radius: 50%;
+        padding:1.5rem;
 
         .text {
             color: transparent;
@@ -20,6 +20,7 @@
         
         .img-logo {
             width: 9rem;
+            height: 8rem;
         }
 
         .icon {

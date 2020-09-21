@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthenticationService } from "@app/_services/authentication.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
+import { AuthenticationService } from '@app/_services/authentication.service';
+
 
 @Component({
   selector: "app-login",
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading: boolean = false;
   submitted: boolean = false;
-  returnUrl: string;
+  returnUrl: string='user';
   error = "";
 
   constructor(
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
     });
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams["returnUrl"];
+    // this.returnUrl = this.route.snapshot.queryParams["returnUrl"];
   }
 
   get f() {
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
         (data) => {
           // console.log(data.role.toLowerCase())
           this.loading = false;
-          this.router.navigate([this.returnUrl || data.role.toLowerCase()]);
+          this.router.navigate([this.returnUrl]);
         },
         (error) => {
           this.error = error.error.message || "could not login. try again!";

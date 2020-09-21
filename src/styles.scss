@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+@import './assets/scss/abstracts/variables';
+@import './assets/scss/base/reset';
+@import './assets/scss/base/typography';
+@import './assets/scss/utils/animations';
+
+html, body { 
+    height: 100%; 
+}
+
+.mat-tooltip.tooltip {
+    font-size: 12px;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

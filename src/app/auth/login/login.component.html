@@ -2,7 +2,7 @@
     <mat-progress-bar class="login__progress" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     <p class="login__title">Sign in</p>
     <form action="" method="post" class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-error class="form__error" *ngIf="error">{{ error | sentenceCase }}</mat-error>
+        <mat-error class="form__error" *ngIf="error">{{ error  }}</mat-error>
         <mat-form-field class="form__field">
             <mat-label>User name</mat-label>
             <input matInput formControlName="username">

@@ -1,0 +1,42 @@
+@import '../../assets/scss/abstracts/variables';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary 50%,#fff 50%);
+
+    &__image {
+        background-color: $color-primary;
+        border-radius: 50%;
+        padding:0.5rem;
+
+        .text {
+            color: transparent;
+            background-image: linear-gradient(185deg, yellow, yellow 5%, rgb(255,77,77));
+            background-clip: text;
+        }
+        
+        .img-logo {
+            width: 9rem;
+        }
+
+        .icon {
+            font-size: 8.5rem;
+        }
+
+        .big {
+            // font-family: Uroob;
+            font-size: 10rem;
+            font-weight: 700;
+            // letter-spacing: -20px;
+        }
+        
+        .small {
+            // position: absolute;
+            // font-weight: 300;
+            font-size: 5rem;
+        }
+    }
+}

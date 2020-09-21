@@ -1,13 +1,14 @@
+import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
-import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map, first } from "rxjs/operators";
 import jwt_decode from "jwt-decode";
 import { environment } from "@environments/environment";
 import { ThrowStmt } from "@angular/compiler";
-
-@Injectable({ providedIn: "root" })
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthenticationService {
   public currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;

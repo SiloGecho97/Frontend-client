@@ -1,0 +1,15 @@
+@import '../../../../assets/scss/abstracts/variables';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+
+    .title {
+        color: $color-grey-2;
+        // font-weight: 300;
+        margin: 0;
+        font-size: 25px;
+    }
+}

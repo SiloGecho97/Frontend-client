@@ -1,0 +1,49 @@
+
+@keyframes highlight {
+    0% {
+        background: rgba($color-purple, .75);
+        height: 20px;
+    }
+    20% {
+      height: auto;
+    }
+    100% {
+        background: none;
+    }
+}
+
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes ringing {
+  0% {
+    transform: translateY(-40%);
+  }
+  20% {
+    transform: rotate(25deg) translateY(-40%);
+  }
+  25% {
+    transform: rotate(-25deg) translateY(-40%);
+  }
+  30% {
+    transform: rotate(25deg) translateY(-40%);
+  }
+  35% {
+    transform: rotate(-25deg) translateY(-40%);
+  }
+  40% {
+    transform: rotate(0deg) translateY(-40%);
+  }
+  45% {
+    transform: translateY(-18%);
+  }
+  100% {
+    transform: translateY(-18%);
+  }
+}

@@ -1,0 +1,42 @@
+<div class="main-container">
+    <div class="controls">
+      <button (click)="refresh()" mat-button class="refresh">
+        <i class="far fa-redo-alt refresh__icon" [class.rotate]="loading"></i>
+        Refresh
+      </button>
+    </div>
+
+    <div class="content">
+      <div class="content__header">
+        <span class="item narrow">#</span>
+        <span class="item">Phone number</span>
+        <span class="item">Short code</span>
+        <span class="item wide">Message</span>
+        <span class="item wide">Values</span>
+        <span class="item">Recieved date</span>
+      </div>
+      <div class="row" *ngFor="let item of dataSource; let i = index">
+        <span class="row__item--narrow">{{ i + 1 + page * pageSize }}</span>
+        <span class="row__item">{{ item.phoneNumber }}</span>
+        <span class="row__item">{{ item.shortCode }}</span>
+        <span class="row__item--wide">{{ item.message }}</span>
+        <span class="row__item--wide">{{ item.type }}</span>
+        <span class="row__item">{{
+          item.createdAt | date: "yyyy-MM-dd hh:mm a"
+        }}</span>
+      </div>
+      <div *ngIf="!count || count == 0" class="nofound">
+        No Message Found!
+      </div>
+      <mat-paginator
+        class="paginator"
+        [pageSizeOptions]="[10, 20, 50, 100]"
+        showFirstLastButtons
+        [length]="count"
+        (page)="pageChange($event)"
+        [pageSize]="pageSize"
+        [pageIndex]="page"
+      ></mat-paginator>
+    </div>
+  </div>
+  

@@ -5,7 +5,26 @@
         Refresh
       </button>
     </div>
-
+    <form action="" method="get" class="form" [formGroup]="searchForm">
+      <div class="filter">
+        <h5 class="form__search-by">Search By</h5>
+        <mat-form-field class="form__field">
+          <input matInput formControlName="message" placeholder="Message" />
+        </mat-form-field>
+        <mat-form-field class="form__field">
+          <input matInput formControlName="phoneNumber" placeholder="Phone Number" />
+        </mat-form-field>
+        <mat-form-field class="form__date">
+          <mat-label>Date</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="date" placeholder="YYYY-MM-DD" />
+          <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+          <mat-datepicker #date></mat-datepicker>
+        </mat-form-field>
+        <button class="search-button" mat-stroked-button color="primary" (click)="onSubmit()">
+          Search
+        </button>
+      </div>
+    </form>
     <div class="content">
       <div class="content__header">
         <span class="item narrow">#</span>

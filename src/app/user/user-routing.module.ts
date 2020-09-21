@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MessageResolverService } from '@app/_services/message-resolver.service';
+import { UserGuard } from './user.guard';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "messages", pathMatch: "full" },
       {
-        // canActivate: [UserGuard],
+        canActivate: [UserGuard],
         path: "messages",
         component: MessagesComponent,
         data: { title: "Messages" },
